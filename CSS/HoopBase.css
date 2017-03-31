@@ -6,10 +6,18 @@
             border: 2px solid black;
             height: 120px;               
             background-color: black;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            right: 0%;
 }
 
-body{
+body.login{
     background: url("mountains.jpg") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
+}
+
+body{
+    background: #343f51;
 }
