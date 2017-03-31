@@ -9,7 +9,7 @@
 }
 
 body{
-    background-image: url("mountains.jpg");
+    background: url("mountains.jpg") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
 }
