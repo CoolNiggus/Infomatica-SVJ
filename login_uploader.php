@@ -10,9 +10,8 @@ $sql = "SELECT * FROM user WHERE username = '$username' AND pwd = '$pwd' ";
 $result = mysqli_query($conn, $sql);
 
 if($row = mysqli_fetch_assoc($result)){
-    echo "account exists";
+    header("Location: homepage.html");
 } else {
-    echo "wrong credentials!";
+    echo "wrong username or password!";
 }
 
-//header("Location: signup.html");
