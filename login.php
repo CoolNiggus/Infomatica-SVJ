@@ -12,13 +12,15 @@
 
     <div id="HoopTitle">Hoop</div>
         
-    <form class="login" action="login_uploader.php" method="POST">
+    <form class="login" action="" method="POST">
         <input class="login" type="text" name="username" placeholder="Username">
         <input class="login" type="password" name="pwd" placeholder="Password">
         <button id="login" type="submit">Log In</button>
-    </form>                    
+    </form>  
+
+    <?php include("login_uploader.php") ?>                  
         
-        <a href="signup.html"><div id="SignupButton">Register</div></a>
+    <a href="signup.html"><div id="SignupButton">Register</div></a>
               
 </body>
 </html>
