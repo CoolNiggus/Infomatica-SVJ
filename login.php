@@ -15,10 +15,9 @@
     <form class="login" action="" method="POST">
         <input class="login" type="text" name="username" placeholder="Username">
         <input class="login" type="password" name="pwd" placeholder="Password">
-        <button id="login" type="submit">Log In</button>
-    </form>  
-
-    <?php include("login_uploader.php") ?>                  
+        <button id="login" name="submit" type="submit">Log In</button>
+        <?php include("login_uploader.php") ?>
+    </form>                    
         
     <a href="signup.html"><div id="SignupButton">Register</div></a>
               

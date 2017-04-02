@@ -9,14 +9,17 @@ $sql = "SELECT * FROM user WHERE username = '$username' AND pwd = '$pwd' ";
 
 $result = mysqli_query($conn, $sql);
 
-echo "/".$username."/";
-
-
-if($row = mysqli_fetch_assoc($result)){
-
-        header("Location: homepage.html");
-    } else {
-        echo "wrong username or password!";
+if(isset($_POST["submit"])){
+    if(empty($username) || empty($pwd)){
+        echo "please fill in the fields";
+    }else{
+        if($row = mysqli_fetch_assoc($result)){
+            header("Location: homepage.html");
+        } else {
+            echo "wrong username or password!";
+        }
     }
+}
+
 
 ?>
