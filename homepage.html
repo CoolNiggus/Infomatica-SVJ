@@ -4,17 +4,57 @@
     <meta charset="UTF-8">
     <title>HOOP Homepage</title>
     <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
+    
+    <style>
+    .FunctionsBtns{
+        width: 200px;
+        height: 50px;
+        background-color:black;
+        color: white;
+        border: none;
+        text-align: center;
+        font-size: 30px;
+        
+    }
+   
+    #borders{
+        border: 2px solid turquoise;
+        position: absolute;
+    }
+    
+    .Ddlinks{
+        display: none;
+        color: pink;
+        width: 40px;
+        font-size: 30px;
+        position: absolute;
+        
+    }
+    
+    .Ddlinks a{
+        color: deeppink;
+        text-align: center;
+        text-decoration: none;
+        background-color: green;
+    }
+    
+    #borders:hover .Ddlinks{
+        display: block;
+    }
+
+</style>
 
 </head>
 <body>
-    <div id="HoopTitle">Hoop</div>
-
     
-  <!--============================-->
-  
-
-
-  <!--============================-->
-
+    <div id="borders">
+        <button class="FunctionsBtns">Profile</button>
+        <div class="DdLinks">
+            <a href="#">Hash1</a>
+            <a href="#">Hash2</a>
+            <a href="#">Hash3</a>
+        </div>
+    </div>
+        
 </body>
 </html>
