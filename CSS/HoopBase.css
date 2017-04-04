@@ -6,10 +6,10 @@
     border: 2px solid black;
     height: 120px;               
     background-color: black;
+    position: absolute;
     top: 0%;
     left: 0%;
     right: 0%;
-    width: 100%;
 }
 
 body.login{

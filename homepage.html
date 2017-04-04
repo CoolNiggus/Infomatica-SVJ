@@ -6,37 +6,38 @@
     <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
     
     <style>
+        nav{
+            background: gray;
+            position: absolute;
+            left:  0%;
+            top: 300px;
+            width: 100%; 
+            padding: 0px;
+        }
+
         .dropdown{
-            border: 1px solid turquoise;
             display: inline-block;
-            background: black;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 5px;
-              
+            padding: 15;
+            
         }
 
-        .dropdownlist{
+        .dropdown:hover{
+            display: inline-block;
+            background: red;
+        }
+
+        .dropdown div{
             position: absolute;
-            display: none;
-            clear: right;
+              display: none;
         }
 
-        .dropdown:hover .dropdownlist{
+        .dropdown div a{
             display: block;
-            position: absolute;
         }
 
-        .dropdownlist a{
-            display: block;
-            border: 1px solid turquoise;
-            background-color: white;
-            width: 50px;
-            text-decoration: none;
-            color: black;
-
+        .dropdown:hover div{
+              display: block;
         }
-       
        
     </style>
 
@@ -47,25 +48,23 @@
 
     
 <nav>   
-    <div class="dropdown">
-        <a class="name">Profile</a>
-        <div class="dropdownlist">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-        </div>        
-    </div>
-
-    <div class="dropdown">
-        <a class="name">Toets Maken</a>
-        <div class="dropdownlist">
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">7</a>
-            <a href="#">8</a>
-        </div>        
-    </div>
+    <ul>
+        <li class="dropdown">
+            <a>profile</a>
+            <div>
+                <a href="#name">name</a>
+                <a href="#account">account</a>
+                <a href="#logout">loggout</a>
+            </div>          
+        </li><li class="dropdown">
+            <a>social</a>
+            <div>
+                <a href="#inbox">inbox</a>
+                <a href="#homework">homework</a>
+                <a href="#friends">friends</a>
+            </div>          
+        </li>
+    </ul>
 </nav>
 
         
