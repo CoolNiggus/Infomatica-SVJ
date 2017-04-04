@@ -7,13 +7,19 @@
     
     <style>
         .dropdown{
-            border: 3px solid black;
+            border: 1px solid turquoise;
             display: inline-block;
+            background: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+              
         }
 
         .dropdownlist{
             position: absolute;
             display: none;
+            clear: right;
         }
 
         .dropdown:hover .dropdownlist{
@@ -23,25 +29,45 @@
 
         .dropdownlist a{
             display: block;
-            border: 2px solid red;
+            border: 1px solid turquoise;
+            background-color: white;
             width: 50px;
             text-decoration: none;
-            color: green;
+            color: black;
+
         }
+       
+       
     </style>
 
 </head>
 <body>
+
+    <div id="HoopTitle">Hoop</div>
+
     
+<nav>   
     <div class="dropdown">
-            <a class="name">Profiles</a>
-            <div class="dropdownlist">
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-            </div>        
+        <a class="name">Profile</a>
+        <div class="dropdownlist">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+        </div>        
     </div>
+
+    <div class="dropdown">
+        <a class="name">Toets Maken</a>
+        <div class="dropdownlist">
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+        </div>        
+    </div>
+</nav>
+
         
 </body>
 </html>
