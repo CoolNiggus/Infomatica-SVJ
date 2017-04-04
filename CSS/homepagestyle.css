@@ -1,0 +1,45 @@
+nav{
+    background:black;
+    position: absolute;
+    left:  0%;
+    top: 120px;
+    width: 100%; 
+    padding: 0px;
+            
+}
+
+.dropdown{
+    display: inline-block;
+    padding: 15;
+    border-left: 2px solid turquoise;
+    border-right: 2px solid turquoise;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dropdown:hover{
+    display: inline-block;
+    background-color: turquoise;
+}
+
+.dropdown div{
+    position: absolute;
+    display: none;
+}
+
+.dropdown div a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border: 2px solid turquoise;
+    background-color: black;
+    width: 100%;
+}
+
+.dropdown:hover div{
+    display: block;
+}
+        

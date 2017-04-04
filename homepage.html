@@ -4,68 +4,57 @@
     <meta charset="UTF-8">
     <title>HOOP Homepage</title>
     <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
+    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">
     
-    <style>
-        nav{
-            background: gray;
-            position: absolute;
-            left:  0%;
-            top: 300px;
-            width: 100%; 
-            padding: 0px;
-        }
 
-        .dropdown{
-            display: inline-block;
-            padding: 15;
-            
-        }
-
-        .dropdown:hover{
-            display: inline-block;
-            background: red;
-        }
-
-        .dropdown div{
-            position: absolute;
-              display: none;
-        }
-
-        .dropdown div a{
-            display: block;
-        }
-
-        .dropdown:hover div{
-              display: block;
-        }
-       
-    </style>
 
 </head>
 <body>
 
-    <div id="HoopTitle">Hoop</div>
 
-    
+<div id="HoopTitle">Hoop</div>
+
+
+
 <nav>   
     <ul>
         <li class="dropdown">
-            <a>profile</a>
+            <a>Groepen</a>
             <div>
-                <a href="#name">name</a>
-                <a href="#account">account</a>
-                <a href="#logout">loggout</a>
+                <a href="#name">Groepen lijst</a>
+                <a href="#account">Groep maken</a>
+                <a href="#logout">Leerlingen</a>
             </div>          
         </li><li class="dropdown">
-            <a>social</a>
+            <a>Toetsen</a>
             <div>
-                <a href="#inbox">inbox</a>
-                <a href="#homework">homework</a>
-                <a href="#friends">friends</a>
+                <a href="#homework">Toets maken</a>
+                <a href="#friends">Overzicht van toetsen</a>
+                <a href="#inbox">Aantwoorden</a>
+            </div>          
+        </li><li class="dropdown">
+            <a>Huiswerk</a>
+            <div>
+                <a href="#name">Huiswerk aangeven</a>
+                <a href="#account">Agenda</a>
+            </div>          
+        </li><li class="dropdown">
+            <a>Mail</a>
+            <div>
+                <a href="#name">Inbox</a>
+                <a href="#account">Nieuw mail</a>
+            </div>          
+        </li><li class="dropdown">
+            <a>Account</a>
+            <div>
+                <a href="#name">Account bekijken</a>
+                <a href="#logout">Uit loggen</a>
             </div>          
         </li>
     </ul>
 </nav>
+
+
 
         
 </body>
