@@ -13,5 +13,5 @@ VALUES('$username','$email','$pwd','$firstname','$lastname')";
 
 $result = mysqli_query($conn, $sql);
 
-//header("Location: login.html");
+header("Location: login.php");
 
