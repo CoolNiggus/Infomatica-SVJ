@@ -8,10 +8,20 @@ $pwd = $_POST["pwd"];
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
 
-$sql = "INSERT INTO user(username, email, pwd, firstname, lastname) 
-VALUES('$username','$email','$pwd','$firstname','$lastname')";
+//checks if the form is valid
 
-$result = mysqli_query($conn, $sql);
+$checkusername = (isset($_POST['username']) && !(empty($_POST['username'])) );
 
-header("Location: login.php");
+if($checkusername){
+    echo 'yay';
+} else{
+    echo 'nay';
+}
 
+//$sql = "INSERT INTO user(username, email, pwd, firstname, lastname) 
+//VALUES('$username','$email','$pwd','$firstname','$lastname')";
+
+//$result = mysqli_query($conn, $sql);
+
+
+?>
