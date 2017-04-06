@@ -14,6 +14,8 @@ if(isset($_POST["submit"])){
         echo "please fill in the fields";
     }else{
         if($row = mysqli_fetch_assoc($result)){
+            $_SESSION['CurrentUser'] = $username;
+
             header("Location: homepage.html");
         } else {
             echo "wrong username or password!";
