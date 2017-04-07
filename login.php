@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <html>  
 <head>
     <title>Hoop</title>

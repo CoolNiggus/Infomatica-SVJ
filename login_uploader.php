@@ -1,6 +1,6 @@
 <?php
 
-include "dbh.php";
+include("dbh.php");
 
 $username = $_POST["username"];
 $pwd = $_POST["pwd"];
@@ -16,7 +16,7 @@ if(isset($_POST["submit"])){
         if($row = mysqli_fetch_assoc($result)){
             $_SESSION['CurrentUser'] = $username;
 
-            header("Location: homepage.html");
+            header("Location: homepage.php");
         } else {
             echo "wrong username or password!";
         }

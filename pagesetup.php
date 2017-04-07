@@ -6,7 +6,7 @@
 session_start();
 
 if(!(isset($_SESSION['CurrentUser']))){
-    header("Location: login.php")
+    header("Location: login.php");
 }
 
 ?>

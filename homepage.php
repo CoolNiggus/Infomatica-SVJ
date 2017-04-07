@@ -1,4 +1,5 @@
-<!DOCTYPE>
+<?php include("pagesetup.php"); ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,7 +38,7 @@
                 <a href="#account">Agenda</a>
             </div>          
         </li><li class="dropdown">
-            <a>Mail</a>
+            <a>Mail</a> <!--put button here-->
             <div>
                 <a href="#name">Inbox</a>
                 <a href="#account">Nieuw mail</a>
