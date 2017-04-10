@@ -17,7 +17,7 @@ $checkfirstname = (isset($_POST['firstname']) && !(empty($_POST['firstname'])) )
 $checklastname = (isset($_POST['lastname']) && !(empty($_POST['lastname'])) );
 
 if($checkusername && $checkemail && $checkpwd && $checkfirstname && $checklastname){
-    $sql = "INSERT INTO user(username, email, pwd, firstname, lastname) 
+    $sql = "INSERT INTO Users(username, email, pwd, firstname, lastname) 
     VALUES('$username','$email','$pwd','$firstname','$lastname')";
 
     $result = mysqli_query($conn, $sql);
