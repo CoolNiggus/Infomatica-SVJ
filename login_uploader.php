@@ -5,7 +5,7 @@ include "dbh.php";
 $username = $_POST["username"];
 $pwd = $_POST["pwd"];
 
-$sql = "SELECT * FROM Users WHERE username = '$username' AND pwd = '$pwd' ";
+$sql = "SELECT * FROM users WHERE username = '$username' AND pwd = '$pwd' ";
 
 $result = mysqli_query($conn, $sql);
 
