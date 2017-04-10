@@ -2,14 +2,8 @@
     color:white;
     text-align: center;
     font-size: 90px;
-    font-family: Arial, Helvetica, sans-serif;
-    border: 2px solid black;
-    height: 120px;               
+    font-family: Arial, Helvetica, sans-serif;               
     background-color: black;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    right: 0%;
 }
 
 body.login{
