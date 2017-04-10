@@ -2,22 +2,27 @@ nav{
     background:black;
     left:  0%;
     top: 120px;
-    width: 100%;               
+    width: 100%;
+    height: auto;               
 }
 
 .dropdown{
+    margin: 0px;
+    padding: 0px;
     display: inline-block;
+}
+
+.dropdown:hover{
+    background-color: turquoise;
+    color: black;
+}
+
+.dropdown a{
     padding: 15px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     cursor: pointer;
-}
-
-.dropdown:hover{
-    display: inline-block;
-    background-color: turquoise;
-    color: black;
 }
 
 .dropdown div{
