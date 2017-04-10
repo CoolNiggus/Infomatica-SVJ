@@ -1,3 +1,8 @@
+
+
+
+
+
 CREATE TABLE User (
 	username varchar(32) not null PRIMARY key,
     email varchar(128),
