@@ -11,8 +11,10 @@ body.login{
     background-size: cover;
     background-position: center;
     
+    
 }
 
 body{
     background: #343f51;
+    margin: 0px;
 }

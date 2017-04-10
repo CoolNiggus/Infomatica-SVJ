@@ -1,10 +1,9 @@
 nav{
     background:black;
-    position: absolute;
     left:  0%;
     top: 120px;
     width: 100%; 
-    padding: 0px;
+     
             
 }
 
@@ -45,5 +44,9 @@ nav{
 
 .dropdown:hover div{
     display: block;
+}
+
+ul{
+    margin: 0px;
 }
         
