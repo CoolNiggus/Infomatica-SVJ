@@ -1,4 +1,4 @@
-<?php include("pagesetup.php"); ?>
+<?php //include("pagesetup.php"); ?>
 
 <html lang="en">
 <head>
@@ -14,7 +14,8 @@
 
 
 <div id="HoopTitle">Hoop</div>
-   
+
+<nav>  
     <ul>
         <li class="dropdown">
             <a class="dropdownbtn">Groepen</a>
@@ -50,6 +51,7 @@
             </div>          
         </li>
     </ul>
+</nav>        
 
 
 

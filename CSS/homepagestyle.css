@@ -1,8 +1,17 @@
 ul{
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;  
+}
+
+nav{
     background:black;
     width: 100%;
     position: absolute;
-    list-style-type: none;
     margin: 0;
     padding: 0;  
 }
@@ -22,7 +31,7 @@ ul{
     padding: 10px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -35,10 +44,13 @@ ul{
     display: block;
     text-align: center;
     text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     border: 2px solid turquoise;
     background-color: black;
     width: 100%;
+    
 }
 
 .dropdown div a:hover{
