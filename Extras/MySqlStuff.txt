@@ -1,7 +1,24 @@
+
+
+
+
+
 CREATE TABLE User (
 	username varchar(32) not null PRIMARY key,
-    email varchar(128) not null,
-    pwd varchar(128) not null,
+    email varchar(128),
+    pwd varchar(128),
+    firstname varchar(128),
+    lastname varchar(128)
+)
+
+//updates connect to the new database
+$link = mysqli_connect($host, $dbusername, $dbpassword, 'hoop');
+
+//creates the 'users' table
+CREATE TABLE User (
+	username varchar(32) not null PRIMARY key,
+    email varchar(128),
+    pwd varchar(128),
     firstname varchar(128),
     lastname varchar(128)
 )

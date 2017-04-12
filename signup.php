@@ -12,7 +12,7 @@
 </head>
 <body class="login">
 
-    
+    <div id="HoopTitle">Hoop</div>
    
     <form class="login" action="" method="POST">
         <input class="login" type="text" name="username" placeholder="Username"> <!--Checking if the username is not taken-->
