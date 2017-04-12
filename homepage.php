@@ -37,11 +37,7 @@
                 <a href="#account">Agenda</a>
             </div>          
         </li><li class="dropdown">
-<<<<<<< HEAD:homepage.php
-            <a>Mail</a> <!--put button here-->
-=======
             <a class="dropdownbtn">Mail</a>
->>>>>>> a1476c50542ea51d2a986c90aff885bc06dc5e13:homepage.html
             <div>
                 <a href="#name">Inbox</a>
                 <a href="#account">Nieuw mail</a>
