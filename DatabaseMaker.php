@@ -23,6 +23,17 @@ echo "created new database hoop. <br>";
 //updates connect to the new database
 $link = mysqli_connect($host, $dbusername, $dbpassword, 'hoop');
 
+//creates user table in hoop
+
+$sql = 'CREATE TABLE users (
+	username varchar(32) not null PRIMARY key,
+    email varchar(128),
+    pwd varchar(128),
+    firstname varchar(128),
+    lastname varchar(128)
+)';
+$result = mysqli_query($link, $sql);
+echo "created table: users"
 
 
 

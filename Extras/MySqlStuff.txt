@@ -3,7 +3,7 @@
 
 
 
-CREATE TABLE User (
+CREATE TABLE users (
 	username varchar(32) not null PRIMARY key,
     email varchar(128),
     pwd varchar(128),
