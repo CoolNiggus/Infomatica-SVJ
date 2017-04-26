@@ -32,6 +32,7 @@ $sql = 'CREATE TABLE users (
     firstname varchar(128),
     lastname varchar(128)
 )';
+
 $result = mysqli_query($link, $sql);
 echo "created table: users"
 
