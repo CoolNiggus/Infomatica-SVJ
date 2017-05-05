@@ -25,7 +25,7 @@ $link = mysqli_connect($host, $dbusername, $dbpassword, 'hoop');
 
 //creates user table in hoop
 
-$sql = 'CREATE TABLE users (
+$sql = 'CREATE TABLE user (
 	username varchar(32) not null PRIMARY key,
     email varchar(128),
     pwd varchar(128),
@@ -34,7 +34,7 @@ $sql = 'CREATE TABLE users (
 )';
 
 $result = mysqli_query($link, $sql);
-echo "created table: users"
+echo "created table: users";
 
 
 
