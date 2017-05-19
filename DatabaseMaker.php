@@ -24,7 +24,6 @@ echo "created new database hoop. <br>";
 $link = mysqli_connect($host, $dbusername, $dbpassword, 'hoop');
 
 //creates user table in hoop
-
 $sql = 'CREATE TABLE user (
 	username varchar(32) not null PRIMARY key,
     email varchar(128),
@@ -34,8 +33,27 @@ $sql = 'CREATE TABLE user (
 )';
 
 $result = mysqli_query($link, $sql);
-echo "created table: users";
+echo "created table: user";
 
+//create usertotest table
+$sql = 'CREATE TABLE usertotest (
+	username varchar(32),
+    testID varchar(128) AUTO_INCREMENT,
+    primary key (username, testID)
+)';
+
+$result = mysqli_query($link, $sql);
+echo "created table: usertotest";
+
+//create testtoquestion table
+$sql = 'CREATE TABLE testtoquestion (
+	testID varchar(128),
+    questionID int AUTO_INCREMENT,
+    primary key (username, testID)
+)';
+
+$result = mysqli_query($link, $sql);
+echo "created table: usertotest";
 
 
 
