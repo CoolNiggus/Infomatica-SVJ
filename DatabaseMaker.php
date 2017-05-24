@@ -35,27 +35,39 @@ $sql = 'CREATE TABLE user (
 $result = mysqli_query($link, $sql);
 echo "created table: user";
 
-//create usertotest table
-$sql = 'CREATE TABLE usertotest (
+//create test table
+$sql = 'CREATE TABLE test (
+    testID INT AUTO_INCREMENT,
+    username varchar(32),
+    primary key (testID),
+    FOREIGN KEY (username) REFERENCES user(username)
+)';
+
+$result = mysqli_query($link, $sql);
+echo "created table: test";
+
+//create question table
+$sql = 'CREATE TABLE question (
 	username varchar(32),
-    testID varchar(128) AUTO_INCREMENT,
-    primary key (username, testID)
+    testID INT AUTO_INCREMENT,
+    questionID INT AUTO_INCREMENT,
+    primary key (username, testID, questionID)
 )';
 
 $result = mysqli_query($link, $sql);
-echo "created table: usertotest";
+echo "created table: question";
 
-//create testtoquestion table
-$sql = 'CREATE TABLE testtoquestion (
-	testID varchar(128),
-    questionID int AUTO_INCREMENT,
-    primary key (username, testID)
+//create answer table
+$sql = 'CREATE TABLE answer (
+	username varchar(32),
+    testID INT AUTO_INCREMENT,
+    questionID INT AUTO_INCREMENT,
+    answerID INT AUTO_INCREMENT,
+    primary key (username, testID, questionID, answerID)
 )';
 
 $result = mysqli_query($link, $sql);
-echo "created table: usertotest";
-
-
+echo "created table: answer";
 
 
 
