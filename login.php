@@ -23,7 +23,7 @@
         <p><?php include("login_uploader.php") ?></p>
     </form>                    
         
-    <a href="signup.html"><div id="SignupButton">Register</div></a>
+    <a href="signup.php"><div id="SignupButton">Register</div></a>
               
 </body>
 </html>

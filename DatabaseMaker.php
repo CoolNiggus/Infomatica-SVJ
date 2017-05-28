@@ -23,51 +23,49 @@ echo "created new database hoop. <br>";
 //updates connect to the new database
 $link = mysqli_connect($host, $dbusername, $dbpassword, 'hoop');
 
-//creates user table in hoop
-$sql = 'CREATE TABLE user (
-	username varchar(32) not null PRIMARY key,
-    email varchar(128),
-    pwd varchar(128),
-    firstname varchar(128),
-    lastname varchar(128)
-)';
+
+//creates users table in hoop
+$sql = 'CREATE TABLE `hoop`.`users` ( 
+        `ID` INT NOT NULL AUTO_INCREMENT ,
+        `username` VARCHAR(32) NOT NULL , `password` VARCHAR(128) NOT NULL ,
+        `email` VARCHAR(128) NOT NULL , `firstname` VARCHAR(128) NOT NULL , 
+        `lastname` VARCHAR(128) NOT NULL , 
+        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
 
 $result = mysqli_query($link, $sql);
-echo "created table: user";
+echo "created table: users. <br>";
 
-//create test table
-$sql = 'CREATE TABLE test (
-    testID INT AUTO_INCREMENT,
-    username varchar(32),
-    primary key (testID),
-    FOREIGN KEY (username) REFERENCES user(username)
-)';
 
-$result = mysqli_query($link, $sql);
-echo "created table: test";
-
-//create question table
-$sql = 'CREATE TABLE question (
-	username varchar(32),
-    testID INT AUTO_INCREMENT,
-    questionID INT AUTO_INCREMENT,
-    primary key (username, testID, questionID)
-)';
+//create tests table
+$sql = 'CREATE TABLE `hoop`.`tests` ( 
+        `ID` INT NOT NULL AUTO_INCREMENT , 
+        `testname` VARCHAR(128) NOT NULL , 
+        `timer` INT(3) NOT NULL , 
+        `date` DATETIME NOT NULL , 
+        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
 
 $result = mysqli_query($link, $sql);
-echo "created table: question";
+echo "created table: tests. <br>";
 
-//create answer table
-$sql = 'CREATE TABLE answer (
-	username varchar(32),
-    testID INT AUTO_INCREMENT,
-    questionID INT AUTO_INCREMENT,
-    answerID INT AUTO_INCREMENT,
-    primary key (username, testID, questionID, answerID)
-)';
+
+//create questions table
+$sql = 'CREATE TABLE `hoop`.`questions` ( 
+        `ID` INT NOT NULL AUTO_INCREMENT , 
+        `text` TEXT NOT NULL , 
+        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
 
 $result = mysqli_query($link, $sql);
-echo "created table: answer";
+echo "created table: questions. <br>";
+
+
+//create answers table
+$sql = 'CREATE TABLE `hoop`.`answers` ( 
+        `ID` INT NOT NULL AUTO_INCREMENT , 
+        `text` TEXT NOT NULL , 
+        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
+
+$result = mysqli_query($link, $sql);
+echo "created table: answers. <br>";
 
 
 
