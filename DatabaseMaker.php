@@ -24,48 +24,17 @@ echo "created new database hoop. <br>";
 $link = mysqli_connect($host, $dbusername, $dbpassword, 'hoop');
 
 
-//creates users table in hoop
-$sql = 'CREATE TABLE `hoop`.`users` ( 
-        `ID` INT NOT NULL AUTO_INCREMENT ,
-        `username` VARCHAR(32) NOT NULL , `password` VARCHAR(128) NOT NULL ,
-        `email` VARCHAR(128) NOT NULL , `firstname` VARCHAR(128) NOT NULL , 
-        `lastname` VARCHAR(128) NOT NULL , 
-        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
+//creates database table in hoop
+//NOTE: this reads and executes a sql file of a database which is made by 
+//exporting a database .sql file from phpMyAdmin
+//please set the export settings to custom and disable "display comments"
+//and enable all "object creation options".
+$sqlSource = file_get_contents('localhost.sql');
 
-$result = mysqli_query($link, $sql);
-echo "created table: users. <br>";
-
-
-//create tests table
-$sql = 'CREATE TABLE `hoop`.`tests` ( 
-        `ID` INT NOT NULL AUTO_INCREMENT , 
-        `testname` VARCHAR(128) NOT NULL , 
-        `timer` INT(3) NOT NULL , 
-        `date` DATETIME NOT NULL , 
-        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
-
-$result = mysqli_query($link, $sql);
-echo "created table: tests. <br>";
+$result = mysqli_multi_query($link,$sqlSource);
+echo "created database: users. <br>";
 
 
-//create questions table
-$sql = 'CREATE TABLE `hoop`.`questions` ( 
-        `ID` INT NOT NULL AUTO_INCREMENT , 
-        `text` TEXT NOT NULL , 
-        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
-
-$result = mysqli_query($link, $sql);
-echo "created table: questions. <br>";
-
-
-//create answers table
-$sql = 'CREATE TABLE `hoop`.`answers` ( 
-        `ID` INT NOT NULL AUTO_INCREMENT , 
-        `text` TEXT NOT NULL , 
-        PRIMARY KEY (`ID`)) ENGINE = InnoDB;';
-
-$result = mysqli_query($link, $sql);
-echo "created table: answers. <br>";
 
 
 

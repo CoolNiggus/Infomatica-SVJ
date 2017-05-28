@@ -1,53 +1,40 @@
--- phpMyAdmin SQL Dump
--- version 4.4.15.5
--- http://www.phpmyadmin.net
---
--- Host: localhost:3306
--- Generation Time: May 28, 2017 at 02:58 PM
--- Server version: 5.5.49-log
--- PHP Version: 7.0.9
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `hoop`
---
+CREATE DATABASE IF NOT EXISTS `hoop` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hoop`;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `answers`
---
-
+DROP TABLE IF EXISTS `answers`;
 CREATE TABLE IF NOT EXISTS `answers` (
   `ID` int(11) NOT NULL,
   `text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `questionanswers`;
+CREATE TABLE IF NOT EXISTS `questionanswers` (
+  `questionID` int(11) NOT NULL,
+  `answerID` int(11) NOT NULL,
+  `iscorrect` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `questions`
---
-
+DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
   `ID` int(11) NOT NULL,
   `text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `testquestions`;
+CREATE TABLE IF NOT EXISTS `testquestions` (
+  `testID` int(11) NOT NULL,
+  `questionID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `tests`
---
-
+DROP TABLE IF EXISTS `tests`;
 CREATE TABLE IF NOT EXISTS `tests` (
   `ID` int(11) NOT NULL,
   `testname` varchar(128) NOT NULL,
@@ -56,12 +43,7 @@ CREATE TABLE IF NOT EXISTS `tests` (
   `creatorID` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `ID` int(11) NOT NULL,
   `username` varchar(32) NOT NULL,
@@ -71,86 +53,62 @@ CREATE TABLE IF NOT EXISTS `users` (
   `lastname` varchar(128) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `usertests`
---
-
+DROP TABLE IF EXISTS `usertests`;
 CREATE TABLE IF NOT EXISTS `usertests` (
   `userID` int(11) NOT NULL,
   `testID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `answers`
---
 ALTER TABLE `answers`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `questions`
---
+ALTER TABLE `questionanswers`
+  ADD PRIMARY KEY (`questionID`,`answerID`),
+  ADD KEY `answerID` (`answerID`);
+
 ALTER TABLE `questions`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `tests`
---
+ALTER TABLE `testquestions`
+  ADD PRIMARY KEY (`testID`,`questionID`),
+  ADD KEY `questionID` (`questionID`);
+
 ALTER TABLE `tests`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `creatorID` (`creatorID`);
 
---
--- Indexes for table `users`
---
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `usertests`
---
 ALTER TABLE `usertests`
   ADD PRIMARY KEY (`userID`,`testID`),
   ADD KEY `usertests_ibfk_2` (`testID`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `answers`
---
 ALTER TABLE `answers`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `questions`
---
 ALTER TABLE `questions`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tests`
---
 ALTER TABLE `tests`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `users`
---
 ALTER TABLE `users`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- Constraints for dumped tables
---
 
---
--- Constraints for table `tests`
---
+ALTER TABLE `questionanswers`
+  ADD CONSTRAINT `questionanswers_ibfk_2` FOREIGN KEY (`answerID`) REFERENCES `answers` (`ID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `questionanswers_ibfk_1` FOREIGN KEY (`questionID`) REFERENCES `questions` (`ID`) ON UPDATE CASCADE;
+
+ALTER TABLE `testquestions`
+  ADD CONSTRAINT `testquestions_ibfk_2` FOREIGN KEY (`questionID`) REFERENCES `questions` (`ID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `testquestions_ibfk_1` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE;
+
 ALTER TABLE `tests`
   ADD CONSTRAINT `tests_ibfk_1` FOREIGN KEY (`creatorID`) REFERENCES `users` (`ID`) ON UPDATE CASCADE;
+
+ALTER TABLE `usertests`
+  ADD CONSTRAINT `usertests_ibfk_2` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `usertests_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`ID`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
