@@ -5,13 +5,25 @@
     <meta charset="UTF-8">
     <title>HOOP Homepage</title>
     <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
-    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">    
+    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
+
+    <style>
+            #Us{
+                top: 0%;
+                left:1%;
+                position: absolute;
+                color:white;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+            }
+        </style>
+
 </head>
 <body>
 
+<div id="Us">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
 <div id="HoopTitle">Hoop</div>
-<div id="Us">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
 
 <nav>  
