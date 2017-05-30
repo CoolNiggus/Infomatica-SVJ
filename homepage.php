@@ -58,7 +58,7 @@
             <a class="dropdownbtn">Account</a>
             <div>
                 <a href="#name">Account bekijken</a>
-                <a href="#logout">Uit loggen</a>
+                <a href="logout.php">Uit loggen</a>
             </div>          
         </li>
     </ul>
