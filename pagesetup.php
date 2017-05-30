@@ -1,6 +1,6 @@
 <?php
 
-//use this (inculde) at the very beginning of every pagefile that the user need to be logged
+//use this (include) at the very beginning of every pagefile that the user need to be logged
 //on to to use.
 
 session_start();
