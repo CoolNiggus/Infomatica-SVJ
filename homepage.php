@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <title>HOOP Homepage</title>
     <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
-    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">
-    
-
-
+    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">    
 </head>
 <body>
 
 
 <div id="HoopTitle">Hoop</div>
+<div id="Us">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
+
 
 <nav>  
     <ul>
