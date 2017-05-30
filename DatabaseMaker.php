@@ -29,7 +29,7 @@ $link = mysqli_connect($host, $dbusername, $dbpassword, 'hoop');
 //exporting a database .sql file from phpMyAdmin
 //please set the export settings to custom and disable "display comments"
 //and enable all "object creation options".
-$sqlSource = file_get_contents('localhost.sql');
+$sqlSource = file_get_contents('localhost.sql'); //make sure the .sql file is name "localhost.sql"
 
 $result = mysqli_multi_query($link,$sqlSource);
 echo "created database: users. <br>";

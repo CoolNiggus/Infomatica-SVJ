@@ -1,4 +1,4 @@
-<?php //include("pagesetup.php"); ?>
+<?php include("pagesetup.php"); ?>
 
 <html lang="en">
 <head>

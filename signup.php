@@ -14,18 +14,12 @@
 
     <div id="HoopTitle">Hoop</div>
    
-    <form class="login" action="" method="POST">
+    <form class="login" action="signuphandler.php" method="POST">
         <input class="login" type="text" name="username" placeholder="Username"> <!--Checking if the username is not taken-->
         <input class="login" type="text" name="email" placeholder="E-Mail"> <!--Checking if E-Mail Address is not used-->
-        <input class="login" type="text" name="firstname" placeholder="First Name">
-        <input class="login" type="text" name="lastname" placeholder="Last Name">
         <input class="login" type="password" name="pwd" placeholder="Password"> <!--Double checking of password??-->
-        <input class="login" type="text" placeholder="School"> <!--Add a list of options-->
-        <input class="login" type="date" placeholder="When were you born dude?"> <!--perhaps 3 inline boxes; |dd|mm|yy| ???-->       
-        <button id="login" type="submit">Submit</button>
+        <button id="login" type="submit">sign up</button>
     </form>  
-
-    <p><?php include "signup_uploader.php" ?></p>
    
 </body>
 </html>

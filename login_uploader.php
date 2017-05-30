@@ -1,6 +1,6 @@
 <?php
 
-include("dbh.php");
+include("dbh.php"); //handles connection
 
 $username = $_POST["username"];
 $pwd = $_POST["pwd"];
