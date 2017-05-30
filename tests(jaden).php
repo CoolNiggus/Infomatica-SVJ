@@ -3,7 +3,9 @@ session_start();
 
 include("dbh.php");
 
-$sql = "SELECT * FROM `usertests` WHERE `userID` LIKE 'AmagicPotato'";
+$username = $_SESSION["CurrentUser"];
+
+$sql = "SELECT * FROM `usertests` WHERE `userID` LIKE '{$username}'";
 $result = mysqli_query($conn, $sql);
 
 $array = array();
