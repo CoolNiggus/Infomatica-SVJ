@@ -8,14 +8,7 @@
     <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
 
     <style>
-            #Us{
-                top: 0%;
-                left:1%;
-                position: absolute;
-                color:white;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 20px;
-            }
+            
 
             #PageContent{
                 padding:60px;
