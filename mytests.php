@@ -17,6 +17,7 @@ table, th, td {
 <body>
 
     <?php include("displaytests.php"); ?>
+    <a href="">Make New Test</a>
     
 </body>
 </html>
