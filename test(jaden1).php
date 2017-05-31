@@ -15,9 +15,7 @@ table, th, td {
 </head>
 <body>
 
-    <form>
-        <input type="color" name="" value="">
-    </form>
+    <?php include("test(jaden1).php") ?>
     
 </body>
 </html>
