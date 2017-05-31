@@ -15,34 +15,36 @@ while($row = mysqli_fetch_assoc($result)){  //gets all of the users testID's
     $testIDs[] = $row['testID'];
 }
 
+//start of making the html table
+echo "<table style='width:50%'>
+        <tr>
+            <th>testname</th>
+            <th>time (minutes)</th>
+            <th>creator</th>
+        </tr>";
+
 foreach ($testIDs as $value) { //displays all the tests
     $sql = "SELECT * FROM `tests` WHERE `ID` = {$value}";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-    //echo($row['testname'] . "<br>");
+    
+    $testname = $row['testname'];
+    $testime = $row['timer'];
+    $creator = $row['creatorID'];
 
-    //creates a table with the info
     echo
-     '<table style="width:50%">
+     "
         <tr>
-            <th>testname</th>
-            <th>time</th>
-            <th>creator</th>
+            <td>".$testname."</td>
+            <td>".$testime."</td>
+            <td>".$creator."</td>
         </tr>
-        <tr>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>Eve</td>
-            <td>Jackson</td>
-            <td>94</td>
-        </tr>
-        </table>'; 
+        "; 
 
 }
 
+echo "</table> <br>";
+//finished
 
 
 

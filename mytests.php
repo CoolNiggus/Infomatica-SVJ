@@ -8,14 +8,16 @@
     <title>Document</title>
 <style>
 table, th, td {
-    border: 1px solid black;
+    border: 5px solid black;
+    border-collapse: collapse;
 }                        
 </style>
 
 </head>
 <body>
 
-    <?php include("test(jaden1).php") ?>
+    <?php include("displaytests.php"); ?>
+    <a href="">Make New Test</a>
     
 </body>
 </html>
