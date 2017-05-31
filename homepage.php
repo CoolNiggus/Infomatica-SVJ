@@ -16,6 +16,11 @@
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 20px;
             }
+
+            #PageContent{
+                padding:60px;
+                background-color: pink;
+            }
         </style>
 
 </head>
@@ -23,8 +28,8 @@
 
 <div id="Us">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
-<div id="HoopTitle">Hoop</div>
 
+<div id="HoopTitle">Hoop</div>
 
 <nav>  
     <ul>
@@ -62,7 +67,9 @@
             </div>          
         </li>
     </ul>
-</nav>        
+</nav>  
+
+<div id="PageContent">box</div>      
 
 
 
