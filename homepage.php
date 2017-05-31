@@ -7,21 +7,10 @@
     <link rel="stylesheet" type="text/css" href="CSS\hoopbase.css">
     <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
 
-    <style>
-            
-#PageContent{
-                padding:60px;
-                background-color: pink;
-            }
-
-            
-            
-        </style>
-
 </head>
 <body>
 
-<div id="Us">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
+<div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
 
 <div id="HoopTitle">Hoop</div>
@@ -32,7 +21,7 @@
             <a class="dropdownbtn">Groepen</a>
             <div>
                 <a href="#name">Groepen lijst</a>
-                <a href="groupmaker.html">Groep maken</a>
+                <a href="groupmaker.php">Groep maken</a>
                 <a href="#logout">Leerlingen</a>
             </div>          
         </li><li class="dropdown">
@@ -64,7 +53,7 @@
     </ul>
 </nav>  
 
-<div id="PageContent">box</div>      
+<div id="PageContent"></div>      
 
 
 
