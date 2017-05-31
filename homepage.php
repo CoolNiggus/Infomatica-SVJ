@@ -28,7 +28,7 @@
             <a class="dropdownbtn">Toetsen</a>
             <div>
                 <a href="#homework">Toets maken</a>
-                <a href="#friends">Overzicht van toetsen</a>
+                <a href="mytests.php">Overzicht van toetsen</a>
                 <a href="#inbox">Antwoorden</a>
             </div>          
         </li><li class="dropdown">
