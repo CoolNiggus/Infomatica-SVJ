@@ -1,13 +1,12 @@
-<?php include("pagesetup.php"); ?>
+<!DOCTYPE>
+<html>
+    <head>
+        <title>HOOP</title>
+         
+        <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
+        <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HOOP Homepage</title>
-    <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
-    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
-
-    <style>
+        <style>
             #Us{
                 top: 0%;
                 left:1%;
@@ -18,7 +17,8 @@
             }
         </style>
 
-</head>
+    </head>
+   
 <body>
 
 <div id="Us">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
@@ -62,12 +62,5 @@
             </div>          
         </li>
     </ul>
-</nav>        
-
-
-
-
-
-        
-</body>
+</nav>
 </html>
