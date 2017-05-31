@@ -6,6 +6,10 @@
     background-color: black;
 }
 
+div#Us{
+    position: absolute;
+    color: white;
+}
 
 body.login{
     background: url("mountains.jpg") no-repeat center center fixed;

@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>HOOP Homepage</title>
-    <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
+    <link rel="stylesheet" type="text/css" href="CSS\hoopbase.css">
     <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
 
     <style>
             
-
-            #PageContent{
+#PageContent{
                 padding:60px;
                 background-color: pink;
             }
+
+            
+            
         </style>
 
 </head>
