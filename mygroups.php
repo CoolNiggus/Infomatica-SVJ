@@ -1,27 +1,27 @@
-<?php include("pagesetup.php"); ?>
+<?php
+include("pagesetup.php");
+?>
 <html>
     <head>
-        <title>HOOP</title>
-         
-        <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
+        
+        <title>HOOP Homepage</title>
+        <link rel="stylesheet" type="text/css" href="CSS\hoopbase.css">
         <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">
-        <link rel="stylesheet" type="text/css" href="CSS\grouppagestyle.css">
 
     </head>
-   
-<body>
+    <body>
 
-<div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
+        <div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
-<div id="HoopTitle">Hoop</div>
 
+        <div id="HoopTitle">Hoop</div>
 
 <nav>  
     <ul>
         <li class="dropdown">
             <a class="dropdownbtn">Groepen</a>
             <div>
-                <a href="#name">Groepen lijst</a>
+                <a href="mygroups.php">Groepen lijst</a>
                 <a href="groupmaker.php">Groep maken</a>
                 <a href="#logout">Leerlingen</a>
             </div>          
@@ -52,18 +52,14 @@
             </div>          
         </li>
     </ul>
-</nav>
+</nav>  
 
-<div id="PageContent">
+<div id="PageContent">  
+    <?php include("addgroup.php"); ?>
+</div>
 
-    <div id="groupform">
-        <form action="addgroup.php" method="POST">
-            <input type="text" name="name" placeholder="Group name">
-            <input type="submit" value="Groep maken">
-        </form>   
-    </div>
-
-</div>  
-
-</body>
+        
+    </body>
+    
 </html>
+

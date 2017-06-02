@@ -1,0 +1,9 @@
+#groupform{
+                padding: 0px;
+                top: 50%;
+}
+
+input{
+                width: 100%;
+                display: inline;
+}
