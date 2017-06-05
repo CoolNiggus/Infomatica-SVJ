@@ -17,10 +17,9 @@ while($row = mysqli_fetch_assoc($result)){
 
 //start of making the html table
 echo ("<table style='width:50%'>
-      <tr> <th>Test Name</th> <th>Time</th> <th>Creator</th> </tr>");
+      <tr> <th>testname</th> <th>time (minutes)</th> <th>creator</th> </tr>");
 
-//puts every test in a table
-foreach ($testIDs as $value) { 
+foreach ($testIDs as $value) { //displays all the tests
     $sql = "SELECT * FROM `tests` WHERE `ID` = {$value}";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -29,9 +28,15 @@ foreach ($testIDs as $value) {
     $testime = $row['timer'];
     $creator = $row['creatorID'];
 
-    echo("<tr> <td>{$testname}</td> <td>{$testime}min</td> <td>{$creator}</td> <td>{$value}</td> </tr>"); 
+    echo("<tr> <td>{$testname}</td> <td>{$testime}</td> <td>{$creator}</td> </tr>"); 
 
 }
 
 echo ("</table> <br>");
 //finished
+
+
+
+
+
+

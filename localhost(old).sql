@@ -15,18 +15,6 @@ CREATE TABLE IF NOT EXISTS `answers` (
   `text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `groups`;
-CREATE TABLE IF NOT EXISTS `groups` (
-  `ID` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-DROP TABLE IF EXISTS `groupusers`;
-CREATE TABLE IF NOT EXISTS `groupusers` (
-  `groupID` int(11) NOT NULL,
-  `userID` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 DROP TABLE IF EXISTS `questionanswers`;
 CREATE TABLE IF NOT EXISTS `questionanswers` (
   `questionID` int(11) NOT NULL,
@@ -72,13 +60,6 @@ CREATE TABLE IF NOT EXISTS `usertests` (
 ALTER TABLE `answers`
   ADD PRIMARY KEY (`ID`);
 
-ALTER TABLE `groups`
-  ADD PRIMARY KEY (`ID`);
-
-ALTER TABLE `groupusers`
-  ADD PRIMARY KEY (`groupID`,`userID`),
-  ADD KEY `userID` (`userID`);
-
 ALTER TABLE `questionanswers`
   ADD PRIMARY KEY (`questionID`,`answerID`),
   ADD KEY `answerID` (`answerID`);
@@ -104,16 +85,10 @@ ALTER TABLE `usertests`
 
 ALTER TABLE `answers`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `groups`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `questions`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tests`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `groupusers`
-  ADD CONSTRAINT `groupusers_ibfk_1` FOREIGN KEY (`groupID`) REFERENCES `groups` (`ID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `groupusers_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `users` (`username`) ON UPDATE CASCADE;
 
 ALTER TABLE `questionanswers`
   ADD CONSTRAINT `questionanswers_ibfk_1` FOREIGN KEY (`questionID`) REFERENCES `questions` (`ID`) ON UPDATE CASCADE,
@@ -127,8 +102,8 @@ ALTER TABLE `tests`
   ADD CONSTRAINT `tests_ibfk_1` FOREIGN KEY (`creatorID`) REFERENCES `users` (`username`) ON UPDATE CASCADE;
 
 ALTER TABLE `usertests`
-  ADD CONSTRAINT `usertests_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`username`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `usertests_ibfk_2` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `usertests_ibfk_2` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `usertests_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`username`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

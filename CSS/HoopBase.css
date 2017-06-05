@@ -15,9 +15,9 @@ div#loggedusername{
 }
 
 div#PageContent{
-    padding: 400px;
+    padding: 20px;
     margin: 40px;
-    background-color: pink;
+    background-color: #c7d1e0;
 }
 
 body.login{

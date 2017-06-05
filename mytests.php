@@ -63,7 +63,7 @@
 <div id="PageContent">
     
     <?php include("displaytests.php"); ?>
-    <a href="">Make New Test</a>
+    <a href="" style="border:2px solid black;" >Create Test</a>
 
 </div>      
 
