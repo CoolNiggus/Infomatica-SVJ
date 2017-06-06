@@ -63,7 +63,12 @@
 <div id="PageContent">
     
     <?php include("displaytests.php"); ?>
-    <a href="" style="border:2px solid black;" >Create Test</a>
+
+    <form action="createquestions.php" method="POST">
+        <input type="text" name="name" placeholder="test name">
+        <input type="number" name="questions">
+        <input type="submit" name="submit" value="Create Test">
+    </form>
 
 </div>      
 

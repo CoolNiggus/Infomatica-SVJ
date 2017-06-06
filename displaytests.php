@@ -25,11 +25,15 @@ foreach ($testIDs as $value) {
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     
-    $testname = $row['testname'];
-    $testime = $row['timer'];
-    $creator = $row['creatorID'];
+    //sets variables
+    $cell1 = $row['testname'];
+    $cell1 = "<a href='taketest.php?test={$value}'>{$cell1}</a>"; //creates a link to make the test
+    $cell2 = $row['timer'];
+    $cell3 = $row['creatorID'];
 
-    echo("<tr> <td>{$testname}</td> <td>{$testime}min</td> <td>{$creator}</td> <td>{$value}</td> </tr>"); 
+
+
+    echo("<tr> <td>{$cell1}</td> <td>{$cell2}min</td> <td>{$cell3}</td> </tr>"); 
 
 }
 
