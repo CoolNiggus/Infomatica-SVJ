@@ -66,8 +66,8 @@
 
     <form action="createquestions.php" method="POST">
         <input type="text" name="name" placeholder="Test Name">
-        <input type="number" name="questions" placeholder="Number of Questions">
-        <input type="number" name="timer" value="30">
+        <input type="number" name="questions" placeholder="Number of Questions" min="1">
+        <input type="number" name="timer" value="30" min="1">
         <input type="submit" name="submit" value="Create Test">
     </form>
 

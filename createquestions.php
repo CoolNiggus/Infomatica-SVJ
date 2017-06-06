@@ -30,4 +30,4 @@ for ($i=1; $i <= $numquestions; $i++) {
 }
 echo('<input type="submit" name="submit" value="Next"> </form>');
 
-echo $_SESSION["testID"];
+//echo $_SESSION["testID"];
