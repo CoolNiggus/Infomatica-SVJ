@@ -4,11 +4,16 @@ session_start();
 include("dbh.php");
 
 $username = $_SESSION["CurrentUser"];
-
+$timer = $_POST['timer'];
 $testname = $_POST['name'];
 $numquestions = $_POST['questions'];
 
-$_SESSION["testname"] = $testname;
+//inserts the new test
+$query = "INSERT INTO `hoop`.`tests` (`ID`, `testname`, `timer`, `date`, `creatorID`) 
+        VALUES (NULL, '{$testname}', '{$timer}', CURRENT_TIMESTAMP, '{$username}')";
+$result = mysqli_query($conn, $query);
+$_SESSION["testID"] = mysqli_insert_id($conn);//gets the new tests ID
+
 $_SESSION["numquestions"] = $numquestions;
 
 //displays form
@@ -24,3 +29,5 @@ for ($i=1; $i <= $numquestions; $i++) {
     ');
 }
 echo('<input type="submit" name="submit" value="Next"> </form>');
+
+echo $_SESSION["testID"];
