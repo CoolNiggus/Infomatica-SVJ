@@ -43,7 +43,7 @@ $_SESSION["questnumanswers"] = $questnumanswers;
 
 
 //displays the questions and area to fill in the answers
-echo('<form action="testfinisher.php" method="POST">');
+echo('<form action="createtest(3).php" method="POST">');
 for ($i=1; $i <= $numquestions; $i++) { 
     echo($questiontexts[$i]."<br>");
     for ($j=1; $j <= $numanswers[$i]; $j++) { 

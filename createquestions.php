@@ -17,7 +17,7 @@ $_SESSION["testID"] = mysqli_insert_id($conn);//gets the new tests ID
 $_SESSION["numquestions"] = $numquestions;
 
 //displays form
-echo('<form action="createanswers.php" method="POST">');
+echo('<form action="createtest(2).php" method="POST">');
 for ($i=1; $i <= $numquestions; $i++) {
     $head = "Question: " . $i; //field pretext
     //question text var is "$_POST["questiontext_$i"]
