@@ -57,7 +57,7 @@
 <div id="PageContent">
 
     <div id="groupform">
-        <form action="addgroup.php" method="POST">
+        <form action="creategroup.php" method="POST">
             <input type="text" name="name" placeholder="Group name">
             <input type="submit" value="Groep maken">
         </form>   
