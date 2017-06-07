@@ -27,7 +27,7 @@ foreach ($testIDs as $value) {
     
     //sets variables
     $cell1 = $row['testname'];
-    $cell1 = "<a href='taketest.php?test={$value}'>{$cell1}</a>"; //creates a link to take the test
+    $cell1 = "<a href='starttest.php?test={$value}'>{$cell1}</a>"; //creates a link to take the test
     $cell2 = $row['timer'];
     $cell3 = $row['creatorID'];
 
