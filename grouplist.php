@@ -1,20 +1,20 @@
-<?php include("pagesetup.php"); ?>
-<html>
-    <head>
-        <title>HOOP</title>
-         
-        <link rel="stylesheet" type="text/css" href="CSS\HoopBase.css">
-        <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">
-        <link rel="stylesheet" type="text/css" href="CSS\grouppagestyle.css">
+<?php
+ include("pagesetup.php"); ?>
 
-    </head>
-   
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOOP Homepage</title>
+    <link rel="stylesheet" type="text/css" href="CSS\hoopbase.css">
+    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
+
+</head>
 <body>
 
 <div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
-<div id="HoopTitle">Hoop</div>
 
+<div id="HoopTitle">Hoop</div>
 
 <nav>  
     <ul>
@@ -52,18 +52,14 @@
             </div>          
         </li>
     </ul>
-</nav>
+</nav>  
 
 <div id="PageContent">
 
-    <div id="groupform">
-        <form action="creategroup.php" method="POST">
-            <input type="text" name="name" placeholder="Group name">
-            <button type="submit" name="submit">Groep maken</button>
-        </form>   
-    </div>
+    <?php include("displaygrouplist.php") ?>
 
-</div>  
+</div>      
+
 
 </body>
 </html>

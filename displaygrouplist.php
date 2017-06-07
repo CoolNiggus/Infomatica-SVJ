@@ -23,7 +23,7 @@ foreach ($groupIDs as $value) {
     $row = mysqli_fetch_assoc($result);
 
 $cell1 = $row['name'];
-
+$cell1 = "<a href='groupdata.php?group={$value}'>{$cell1}</a>";
 
 echo("<tr> <td>{$cell1}</td> </tr>"); 
 

@@ -16,7 +16,7 @@ $_SESSION["groupID"] = $groupID;
 //adds currentuser to the group
 $query="INSERT INTO `hoop`.`groupusers` (`groupID`, `userID`) VALUES ('$groupID', '$username')";
 $result = mysqli_query($conn, $query);
-header("Location: displaygrouplist.php");
+header("Location: grouplist.php");
 
 
 

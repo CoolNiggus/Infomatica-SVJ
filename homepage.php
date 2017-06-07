@@ -20,7 +20,7 @@
         <li class="dropdown">
             <a class="dropdownbtn">Groepen</a>
             <div>
-                <a href="#name">Groepen lijst</a>
+                <a href="#grouplist.php">Groepen lijst</a>
                 <a href="groupmaker.php">Groep maken</a>
                 <a href="#logout">Leerlingen</a>
             </div>          
