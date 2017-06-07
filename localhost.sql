@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS `answers` (
 DROP TABLE IF EXISTS `groups`;
 CREATE TABLE IF NOT EXISTS `groups` (
   `ID` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL
+  `name` varchar(32) NOT NULL,
+  `adminID` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `groupusers`;
@@ -73,7 +74,8 @@ ALTER TABLE `answers`
   ADD PRIMARY KEY (`ID`);
 
 ALTER TABLE `groups`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `adminID` (`adminID`);
 
 ALTER TABLE `groupusers`
   ADD PRIMARY KEY (`groupID`,`userID`),
@@ -110,6 +112,9 @@ ALTER TABLE `questions`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tests`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `groups`
+  ADD CONSTRAINT `groups_ibfk_1` FOREIGN KEY (`adminID`) REFERENCES `users` (`username`) ON UPDATE CASCADE;
 
 ALTER TABLE `groupusers`
   ADD CONSTRAINT `groupusers_ibfk_1` FOREIGN KEY (`groupID`) REFERENCES `groups` (`ID`) ON UPDATE CASCADE,
