@@ -12,7 +12,7 @@ $groupIDs = array();
 
 while($row = mysqli_fetch_assoc($result)){  
     $groupIDs[] = $row['groupID'];
-    }
+}
 
 echo ("<table style='width:50%'>
       <tr> <th>Group Name</th> </tr>");
