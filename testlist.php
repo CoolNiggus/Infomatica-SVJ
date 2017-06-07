@@ -8,12 +8,11 @@
     <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
 
     <style>
-    table, th, td {
-    border: 5px solid black;
-    border-collapse: collapse;
-    }                        
+        table, th, td {
+        border: 5px solid black;
+        border-collapse: collapse;
+        }                        
     </style>
-
 </head>
 <body>
 
@@ -61,22 +60,9 @@
 </nav>  
 
 <div id="PageContent">
-    
     <?php include("displaytests.php"); ?>
-
-    <form action="createtest(1).php" method="POST">
-        <input type="text" name="name" placeholder="Test Name">
-        <input type="number" name="questions" placeholder="Number of Questions" min="1">
-        <input type="number" name="timer" value="30" min="1">
-        <input type="submit" name="submit" value="Create Test">
-    </form>
-
 </div>      
 
 
-
-
-
-        
 </body>
 </html>
