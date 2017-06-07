@@ -59,7 +59,7 @@
     <div id="groupform">
         <form action="creategroup.php" method="POST">
             <input type="text" name="name" placeholder="Group name">
-            <input type="submit" value="Groep maken">
+            <button type="submit" name="submit">Groep maken</button>
         </form>   
     </div>
 
