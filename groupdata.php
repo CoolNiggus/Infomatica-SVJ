@@ -19,12 +19,8 @@ echo ("<table style='width:50%'>
       <tr> <th>Hoopers that belong to this group</th> </tr>");
 
 foreach ($userIDs as $value) { 
-    
 
-$cell1 = $value;
-//$cell1 = "<a href='groupdata.php?group={$value}'>{$cell1}</a>";
-
-echo("<tr> <td>{$cell1}</td> </tr>"); 
+echo("<tr> <td>{$value}</td> </tr>"); 
 
 }
 
