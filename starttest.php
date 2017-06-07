@@ -27,7 +27,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 //makes the questions ID's list a session variable
 $_SESSION["TestQuestionsIDs"] = $testquestions;
 
-print_r($testquestions);
+print_r($testquestions);//debug shows all the question ID's
 
 echo("<a href='answerquestion.php'>Start Toets</a>");
 
