@@ -1,3 +1,4 @@
+<!--Makes a list of all the groups that a user belongs to-->
 <?php
 session_start();
 
@@ -5,11 +6,13 @@ include("dbh.php");
 
 $username = $_SESSION["CurrentUser"];
 
+//Selects in the database which groups belong to a certain user-->
 $sql = "SELECT * FROM `groupusers` WHERE `userID` LIKE '{$username}'";
 $result = mysqli_query($conn,$sql);
 
 $groupIDs = array();
 
+//Makes a list of all the groups that a certain user belongs to-->
 while($row = mysqli_fetch_assoc($result)){  
     $groupIDs[] = $row['groupID'];
 }

@@ -1,3 +1,4 @@
+<!--Shows the page where a new user can sign up-->
 <!DOCTYPE>
 <html lang="en">
 <head>
@@ -14,10 +15,11 @@
 
     <div id="HoopTitle">Hoop</div>
    
+<!--Shows the form to sign up-->
     <form class="login" action="signuphandler.php" method="POST">
-        <input class="login" type="text" name="username" placeholder="Username"> <!--Checking if the username is not taken-->
-        <input class="login" type="email" name="email" placeholder="E-Mail"> <!--Checking if E-Mail Address is not used-->
-        <input class="login" type="password" name="pwd" placeholder="Password"> <!--Double checking of password??-->
+        <input class="login" type="text" name="username" placeholder="Username">
+        <input class="login" type="email" name="email" placeholder="E-Mail"> 
+        <input class="login" type="password" name="pwd" placeholder="Password"> 
         <button id="login" type="submit">sign up</button>
     </form>  
    

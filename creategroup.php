@@ -1,3 +1,4 @@
+<!--Creates new group-->
 <?php
 session_start();
 

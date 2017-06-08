@@ -1,27 +1,29 @@
-<?php
-include("pagesetup.php");
-?>
-<html>
-    <head>
-        
-        <title>HOOP Homepage</title>
-        <link rel="stylesheet" type="text/css" href="CSS\hoopbase.css">
-        <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">
+<!--Page where it is able to add a new member to a group-->
+<?php include("pagesetup.php"); ?>
 
-    </head>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOOP Homepage</title>
+    <link rel="stylesheet" type="text/css" href="CSS\hoopbase.css">
+    <link rel="stylesheet" type="text/css" href="CSS\homepagestyle.css">   
 
-        <div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
+</head>
+<body>
 
+<!--Shows the username that is logged in on the page-->
+<div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
-        <div id="HoopTitle">Hoop</div>
+<!--Shows the title on the page-->
+<div id="HoopTitle">Hoop</div>
 
+<!--Shows the options you can click on in every single page.-->
 <nav>  
     <ul>
         <li class="dropdown">
             <a class="dropdownbtn">Groepen</a>
             <div>
-                <a href="mygroups.php">Groepen lijst</a>
+                <a href="grouplist.php">Groepen lijst</a>
                 <a href="groupmaker.php">Groep maken</a>
                 <a href="#logout">Leerlingen</a>
             </div>          
@@ -54,12 +56,16 @@ include("pagesetup.php");
     </ul>
 </nav>  
 
-<div id="PageContent">  
-    <?php include("addgroup.php"); ?>
-</div>
+<!--Shows the input and option to add a new member to a group-->
+<div id="PageContent">
 
-        
-    </body>
-    
-</html>
+    <form action='addpeople.php' method='POST'>
+        <input type='text' name='username' placeholder='username'>
+        <button type = "submit" name = "submit">Add</button>
+    </form>
 
+</div>      
+
+
+</body>
+</html

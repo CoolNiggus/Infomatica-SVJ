@@ -1,3 +1,4 @@
+<!--Shows the page where it is able to creat a new group-->
 <?php include("pagesetup.php"); ?>
 <html>
     <head>
@@ -11,11 +12,13 @@
    
 <body>
 
+<!--Shows the username that is logged in on the page-->
 <div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
+<!--Shows the title on the page-->
 <div id="HoopTitle">Hoop</div>
 
-
+<!--Shows the options you can click on in every single page.-->
 <nav>  
     <ul>
         <li class="dropdown">
@@ -54,6 +57,7 @@
     </ul>
 </nav>
 
+<!--Shows the form to create a new group-->
 <div id="PageContent">
 
     <div id="groupform">

@@ -1,3 +1,4 @@
+<!--Shows the homepage-->
 <?php include("pagesetup.php"); ?>
 
 <html lang="en">
@@ -10,11 +11,13 @@
 </head>
 <body>
 
+<!--Shows the username that is logged in on the page-->
 <div id="loggedusername">Logged in as <?php echo($_SESSION["CurrentUser"]); ?> </div> 
 
-
+<!--Shows the title on the page-->
 <div id="HoopTitle">Hoop</div>
 
+<!--Shows the options you can click on in every single page.-->
 <nav>  
     <ul>
         <li class="dropdown">
@@ -53,6 +56,7 @@
     </ul>
 </nav>  
 
+<!--Shows the page content in the homepage-->
 <div id="PageContent"></div>      
 
 
