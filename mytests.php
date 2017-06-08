@@ -62,7 +62,7 @@
 
 <div id="PageContent">
     
-    <?php include("displaytests.php"); ?>
+    <?php include("displaymytests.php"); ?>
 
     <form action="createtest(1).php" method="POST">
         <input type="text" name="name" placeholder="Test Name">

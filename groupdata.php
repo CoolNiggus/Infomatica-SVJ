@@ -63,6 +63,9 @@
     <form action = "addhooper.php" method="POST">
         <button type = "submit" name = "submit">Add new Hooper</button>
     </form>
+    <form action = "givegrouptest.php" method="POST">
+        <button type = "submit" name = "submit">give this group a test</button>
+    </form>
 
 </div>      
 
