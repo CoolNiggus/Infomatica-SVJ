@@ -60,7 +60,7 @@
 <div id="PageContent">
 
     <form action='addpeople.php' method='POST'>
-        <input type='text' name='username' placeholder='username'>
+        <input type='text' name='hooper' placeholder='hooper username'>
         <button type = "submit" name = "submit">Add</button>
     </form>
 

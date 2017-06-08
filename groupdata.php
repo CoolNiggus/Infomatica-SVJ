@@ -60,7 +60,9 @@
 <div id="PageContent">
 
     <?php include("displaygroupdata.php") ?>
-    <form action = "addhooper.php"><button type = "submit" name = "submit">Add new Hooper</button></form>
+    <form action = "addhooper.php" method="POST">
+        <button type = "submit" name = "submit">Add new Hooper</button>
+    </form>
 
 </div>      
 

@@ -7,6 +7,9 @@ include("dbh.php");
 $groupID = $_GET["group"];
 $username = $_SESSION["username"];
 
+//greates a groupID session variable
+$_SESSION["groupID"] = $groupID;
+
 //Selects in the database in table "groupusers" who belongs to the groupname clicked on-->
 $sql = "SELECT * FROM `groupusers` WHERE `groupID` = {$groupID}";
 $result = mysqli_query($conn,$sql);

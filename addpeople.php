@@ -5,14 +5,15 @@ session_start();
 include("dbh.php");
 
 
-$username = $_POST["username"];
+$username = $_POST["hooper"];
 $groupID = $_SESSION["groupID"];
-echo($username);
-echo($groupID);
 
-            
-//$query = "INSERT INTO `hoop`.`groupusers` (`groupID`, `userID`) VALUES ('$groupID', '$username')";
-//$result = mysqli_query($conn, $query);
+
+//adds person to group         
+$query = "INSERT INTO `hoop`.`groupusers` (`groupID`, `userID`) VALUES ('$groupID', '$username')";
+$result = mysqli_query($conn, $query);
+
+header("Location: groupdata.php?group={$groupID}");
 
 //echo("<form action='addhooper.php' method='POST'><input type='text' name='username' placeholder='username'><button type='submit' name='submit'>Add new person</button></form>");
 //echo($groupID);
