@@ -26,7 +26,7 @@ $currentquestiontext = mysqli_fetch_assoc($result)["text"];
 echo($currentquestiontext."<br><br>");
 
 //displays the answers in a form
-echo("<form action='' method='POST'>");
+echo("<form action='insertanswer.php' method='POST'>");
 foreach ($answerIDs as $value) {
     $query = "SELECT * FROM `answers` WHERE `ID` = $value";
     $result = mysqli_query($conn, $query);

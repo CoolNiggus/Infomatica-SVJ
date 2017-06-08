@@ -12,6 +12,13 @@ $_SESSION["TestQuestionsIDs"];
 $_SESSION["CurrentAnswerSet"];
 $_SESSION["LastAnswerID"];
 
+//creates the testinstance in the database
+$query = "INSERT INTO `hoop`.`testinstances` (`ID`, `testID`, `userID`) 
+        VALUES (NULL, '{$_SESSION['CurrentTestID']}', '$username')";
+$result = mysqli_query($conn, $query);
+
+$_SESSION["CurrentInstanceID"] = mysqli_insert_id($conn);
+
 
 $query = "SELECT * FROM `testquestions` WHERE `testID` = {$_SESSION['CurrentTestID']}";
 $result = mysqli_query($conn, $query);
