@@ -11,9 +11,14 @@ $testinstanceID = $_SESSION["CurrentInstanceID"];//gets the ID of the instance o
 $currentquestionID = $_SESSION["TestQuestionsIDs"][$_SESSION["CurrentQuestionNum"]];//gets the question ID of the current question
 $lastanswerID = $_POST["answer"];//gets the chosen answer ID
 
+//checks if given answer matches the right answer
+$query = "SELECT * FROM `questionanswers` WHERE `questionID` = $currentquestionID AND `answerID` = $lastanswerID";
+$result = mysqli_query($conn, $query);
+$iscorrect = mysqli_fetch_assoc($result)['iscorrect'];//is the value of the chosen answer (true/false)
+
 //inserts the answer in the question instances table
 $query = "INSERT INTO `hoop`.`questioninstances` (`testinstanceID`, `questionID`, `answerID`, `answeriscorrect`) 
-            VALUES ('$testinstanceID', '$currentquestionID', '$lastanswerID', '0')";
+            VALUES ('$testinstanceID', '$currentquestionID', '$lastanswerID', '$iscorrect')";
 $result = mysqli_query($conn, $query);
 
 //increments value to go to next question
