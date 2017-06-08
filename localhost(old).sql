@@ -35,10 +35,25 @@ CREATE TABLE IF NOT EXISTS `questionanswers` (
   `iscorrect` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+DROP TABLE IF EXISTS `questioninstances`;
+CREATE TABLE IF NOT EXISTS `questioninstances` (
+  `testinstanceID` int(11) NOT NULL,
+  `questionID` int(11) NOT NULL,
+  `answerID` int(11) NOT NULL,
+  `answeriscorrect` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
   `ID` int(11) NOT NULL,
   `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `testinstances`;
+CREATE TABLE IF NOT EXISTS `testinstances` (
+  `ID` int(11) NOT NULL,
+  `testID` int(11) NOT NULL,
+  `userID` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `testquestions`;
@@ -85,8 +100,18 @@ ALTER TABLE `questionanswers`
   ADD PRIMARY KEY (`questionID`,`answerID`),
   ADD KEY `answerID` (`answerID`);
 
+ALTER TABLE `questioninstances`
+  ADD PRIMARY KEY (`testinstanceID`,`questionID`),
+  ADD KEY `questionID` (`questionID`),
+  ADD KEY `answerID` (`answerID`);
+
 ALTER TABLE `questions`
   ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `testinstances`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `testID` (`testID`),
+  ADD KEY `userID` (`userID`);
 
 ALTER TABLE `testquestions`
   ADD PRIMARY KEY (`testID`,`questionID`),
@@ -110,6 +135,8 @@ ALTER TABLE `groups`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `questions`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `testinstances`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tests`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
@@ -123,6 +150,15 @@ ALTER TABLE `groupusers`
 ALTER TABLE `questionanswers`
   ADD CONSTRAINT `questionanswers_ibfk_1` FOREIGN KEY (`questionID`) REFERENCES `questions` (`ID`) ON UPDATE CASCADE,
   ADD CONSTRAINT `questionanswers_ibfk_2` FOREIGN KEY (`answerID`) REFERENCES `answers` (`ID`) ON UPDATE CASCADE;
+
+ALTER TABLE `questioninstances`
+  ADD CONSTRAINT `questioninstances_ibfk_3` FOREIGN KEY (`answerID`) REFERENCES `questionanswers` (`answerID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `questioninstances_ibfk_1` FOREIGN KEY (`testinstanceID`) REFERENCES `testinstances` (`ID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `questioninstances_ibfk_2` FOREIGN KEY (`questionID`) REFERENCES `questionanswers` (`questionID`) ON UPDATE CASCADE;
+
+ALTER TABLE `testinstances`
+  ADD CONSTRAINT `testinstances_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `users` (`username`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `testinstances_ibfk_1` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE;
 
 ALTER TABLE `testquestions`
   ADD CONSTRAINT `testquestions_ibfk_1` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE,

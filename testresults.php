@@ -30,3 +30,5 @@ $grade = $totalcorrect/$totalquestions * 10;
 echo("Correct: ".$totalcorrect."<br>");
 echo("Total: ".$totalquestions."<br>");
 echo("Grade: ".$grade);
+
+//uploads grade to testinstance
