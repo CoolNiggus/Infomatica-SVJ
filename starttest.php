@@ -12,6 +12,13 @@ $_SESSION["TestQuestionsIDs"];
 $_SESSION["CurrentAnswerSet"];
 $_SESSION["LastAnswerID"];
 
+//creates the testinstance in the database
+$query = "INSERT INTO `hoop`.`testinstances` (`ID`, `testID`, `userID`) 
+        VALUES (NULL, '{$_SESSION['CurrentTestID']}', '$username')";
+$result = mysqli_query($conn, $query);
+
+$_SESSION["CurrentInstanceID"] = mysqli_insert_id($conn);
+
 
 $query = "SELECT * FROM `testquestions` WHERE `testID` = {$_SESSION['CurrentTestID']}";
 $result = mysqli_query($conn, $query);
@@ -27,7 +34,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 //makes the questions ID's list a session variable
 $_SESSION["TestQuestionsIDs"] = $testquestions;
 
-print_r($testquestions);
+print_r($testquestions);//debug shows all the question ID's
 
 echo("<a href='answerquestion.php'>Start Toets</a>");
 

@@ -48,7 +48,7 @@ for ($i=1; $i <= $numquestions; $i++) {
     echo($questiontexts[$i]."<br>");
     for ($j=1; $j <= $numanswers[$i]; $j++) { 
         //creates an input text field with input name = q<questionnumber>a<answernumber>
-        echo('<input type="text" name="q'.$i.'a'.$j.'" placeholder="Answer Text"><br>');
+        echo('<input type="radio" name="q'.$i.'" value="q'.$i.'a'.$j.'"><input type="text" name="q'.$i.'a'.$j.'" placeholder="Answer Text"><br>');
     }
     echo("<br>");
 }
