@@ -22,7 +22,6 @@
             <div>
                 <a href="grouplist.php">Groepen lijst</a>
                 <a href="groupmaker.php">Groep maken</a>
-                <a href="#logout">Leerlingen</a>
             </div>          
         </li><li class="dropdown">
             <a class="dropdownbtn">Toetsen</a>
@@ -30,18 +29,6 @@
                 <a href="#homework">Toets maken</a>
                 <a href="mytests.php">Overzicht van toetsen</a>
                 <a href="#inbox">Antwoorden</a>
-            </div>          
-        </li><li class="dropdown">
-            <a class="dropdownbtn">Huiswerk</a>
-            <div>
-                <a href="#name">Huiswerk aangeven</a>
-                <a href="#account">Agenda</a>
-            </div>          
-        </li><li class="dropdown">
-            <a class="dropdownbtn">Mail</a>
-            <div>
-                <a href="#name">Inbox</a>
-                <a href="#account">Nieuw mail</a>
             </div>          
         </li><li class="dropdown">
             <a class="dropdownbtn">Account</a>
