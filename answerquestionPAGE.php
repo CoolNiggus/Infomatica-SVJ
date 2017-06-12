@@ -44,7 +44,11 @@
 </nav>  
 
 <!--Shows the page content in the homepage-->
-<div id="PageContent"></div>      
+<div id="PageContent">
+
+    <?php include("answerquestion.php"); ?>
+
+</div>      
 
 
 </body>

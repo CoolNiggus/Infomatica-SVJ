@@ -29,7 +29,7 @@
         </li><li class="dropdown">
             <a class="dropdownbtn">Toetsen</a>
             <div>
-                <a href="testlist.php">Toets maken</a>
+                <a href="#homework">Toets maken</a>
                 <a href="mytests.php">Overzicht van toetsen</a>
                 <a href="#inbox">Antwoorden</a>
             </div>          
@@ -44,7 +44,11 @@
 </nav>  
 
 <!--Shows the page content in the homepage-->
-<div id="PageContent"></div>      
+<div id="PageContent">
+
+    <?php include("starttest.php"); ?>
+
+</div>      
 
 
 </body>

@@ -26,9 +26,9 @@ $_SESSION["CurrentQuestionNum"]++;
 
 //indicates if the user finished the test
 if ($_SESSION["CurrentQuestionNum"] > count($_SESSION["TestQuestionsIDs"])) {
-    header("Location: testresults.php");//heads to testresults.php
+    header("Location: testresultsPAGE.php");//heads to testresults.php
 } else {
     //head to next question
-    header("Location: answerquestion.php");
+    header("Location: answerquestionPAGE.php");
 
 }
