@@ -6,10 +6,11 @@ include "dbh.php";
 $username = $_POST["username"];
 $email = $_POST["email"];
 $pwd = $_POST["pwd"];
+$accesslvl = $_POST["accesslevel"];
 
 //Puts the data of the sign up form in the database table users.
-$sql = "INSERT INTO users(username, email, pwd) 
-    VALUES('$username','$email','$pwd')";
+$sql = "INSERT INTO users(username, email, pwd, accesslevel) 
+    VALUES('$username','$email','$pwd','$accesslvl')";
 
 $result = mysqli_query($conn, $sql);
 

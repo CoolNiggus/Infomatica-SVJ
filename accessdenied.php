@@ -1,7 +1,3 @@
 <?php
-session_start();
 
-include("dbh.php");
-
-$username = $_SESSION["CurrentUser"];
-
+echo("Sorry, students do not have access to this page");
