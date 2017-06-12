@@ -19,7 +19,11 @@
     <form class="login" action="signuphandler.php" method="POST">
         <input class="login" type="text" name="username" placeholder="Username">
         <input class="login" type="email" name="email" placeholder="E-Mail"> 
-        <input class="login" type="password" name="pwd" placeholder="Password"> 
+        <input class="login" type="password" name="pwd" placeholder="Password">
+        <select name="accesslevel">
+            <option value="1">Student</option>
+            <option value="2">Teacher</option>
+        </select> 
         <button id="login" type="submit">sign up</button>
     </form>  
    

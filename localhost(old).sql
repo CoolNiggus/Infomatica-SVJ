@@ -53,7 +53,8 @@ DROP TABLE IF EXISTS `testinstances`;
 CREATE TABLE IF NOT EXISTS `testinstances` (
   `ID` int(11) NOT NULL,
   `testID` int(11) NOT NULL,
-  `userID` varchar(32) NOT NULL
+  `userID` varchar(32) NOT NULL,
+  `grade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `testquestions`;
@@ -157,8 +158,8 @@ ALTER TABLE `questioninstances`
   ADD CONSTRAINT `questioninstances_ibfk_2` FOREIGN KEY (`questionID`) REFERENCES `questionanswers` (`questionID`) ON UPDATE CASCADE;
 
 ALTER TABLE `testinstances`
-  ADD CONSTRAINT `testinstances_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `users` (`username`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `testinstances_ibfk_1` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `testinstances_ibfk_1` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `testinstances_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `users` (`username`) ON UPDATE CASCADE;
 
 ALTER TABLE `testquestions`
   ADD CONSTRAINT `testquestions_ibfk_1` FOREIGN KEY (`testID`) REFERENCES `tests` (`ID`) ON UPDATE CASCADE,
