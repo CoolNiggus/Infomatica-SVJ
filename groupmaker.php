@@ -1,5 +1,7 @@
 <!--Shows the page where it is able to creat a new group-->
 <?php include("pagesetup.php"); ?>
+<?php include("accesscheck.php"); ?>
+
 <html>
     <head>
         <title>HOOP</title>

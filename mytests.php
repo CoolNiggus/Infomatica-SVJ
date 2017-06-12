@@ -1,4 +1,5 @@
 <?php include("pagesetup.php"); ?>
+<?php include("accesscheck.php"); ?>
 
 <html lang="en">
 <head>
