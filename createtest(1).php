@@ -26,14 +26,12 @@
         </li><li class="dropdown">
             <a class="dropdownbtn">Toetsen</a>
             <div>
-                <a href="#homework">Toets maken</a>
+                <a href="testlist.php">Toets maken</a>
                 <a href="mytests.php">Overzicht van toetsen</a>
-                <a href="#inbox">Antwoorden</a>
             </div>          
         </li><li class="dropdown">
             <a class="dropdownbtn">Account</a>
             <div>
-                <a href="#name">Account bekijken</a>
                 <a href="logout.php">Uit loggen</a>
             </div>          
         </li>
